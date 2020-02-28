@@ -1,0 +1,58 @@
+<div class="card">
+    <div class="card-header text-center">
+        <h4  *ngIf="!edit">Create Employee</h4>
+        <h4  *ngIf="edit">Edit Employee</h4>
+    </div>
+    <div class="card-body">
+        <div [hidden]="submitted" style="width: 400px;">
+            <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+                <!-- <div class="form-group">
+                    <label for="name">Id</label>
+                    <input type="text" class="form-control" id="empid" formControlName="EmployeeId" ngModel required>
+                </div> -->
+
+                <div class="form-group">
+                    <label for="name">First Name</label>
+                    <input type="text" class="form-control" id="name" formControlName="FirstName" ngModel required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="name">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" formControlName="LastName">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Title</label>
+                    <input type="text" class="form-control" id="titleId" formControlName="Title">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">BirthDate</label>
+                    <input type="date" class="form-control" id="birthId" formControlName="BirthDate">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">HireDate</label>
+                    <input type="Date" class="form-control" id="hireId" formControlName="HireDate">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">City</label>
+                    <input type="text" class="form-control" id="textId" formControlName="City">
+                </div>
+
+                <div class="row">
+                    <div class="col-6"  *ngIf="!edit">
+                        <button type="submit" class="btn btn-success">Submit</button> <br><br>
+                    </div>
+                    <div class="col-3" *ngIf="edit">
+
+                        <button type="submit" class="btn btn-success">Edit</button>
+                        <!-- <button  (onClick)="loadEmployeeToEdit()" class="btn btn-success">fill fields</button> -->
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="card-header">
+    <div class="row">
+      <div class="col-6">
+        <h3>Employees</h3>
+      </div>
+      <div class="col-6">
+        <a [routerLink]="['add']" class="btn btn-primary float-right mb-3">New employee</a>
+      </div>
+    </div>
+  </div><ngx-spinner size="medium" type="ball-spin-clockwise-fade-rotating"><p style="font-size: 20px; color: white">Loading...</p></ngx-spinner>
+  <div class="card-body">
+    <table class="table table-sm table-hover">
+      <thead>
+        <tr>
+          <th>FirstName</th>
+          <th>LastName</th>
+          <th>Title</th>
+          <th>BirthDate</th>
+          <th>HireDate</th>
+          <th>City</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees; trackBy: trackByFn">
+          <td><a [routerLink]="['/employee/', employee.EmployeeId]">{{ employee.FirstName }}</a></td>
+          <td>{{ employee.LastName }}</td>
+          <td>{{ employee.Title}}</td>
+          <td>{{ employee.BirthDate | date: "dd.MM.y" }}</td>
+          <td>{{ employee.HireDate | date: "dd.MM.y" }}</td>
+          <td>{{ employee.City  }}</td>
+          <td><a routerLink="/edit/{{employee.EmployeeId}}"
+              class="btn btn-primary btn-sm float-right ">Edit</a></td>
+          <td><a routerLink="" (click)="delete(employee.EmployeeId)"
+              class="btn btn-danger btn-sm float-right">Delete</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

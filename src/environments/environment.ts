@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  appUrl: 'http://localhost:5000/api/employee/',
+  dialogflow: {
+    chatBot: 'd4aeca7abbab431ba14df6457a2d6057'
+  }
 };
 
 /*

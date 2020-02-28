@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  latitude = 51.678418;
+  longitude = 7.809007;
   title = 'ClientApp';
 }
